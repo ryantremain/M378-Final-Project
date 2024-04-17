@@ -38,3 +38,39 @@ print(f"Intercept {model.intercept_}")
 print(f"Columns {X.columns}")
 print(f"Coefficients {model.coef_}")
 ```
+
+## Creating a Vetiver Model
+
+```{python}
+import vetiver
+import pins
+
+v = VetiverModel(model, model_name='penguin model', prototype_data=X)
+```
+
+Saving model to local directory
+
+```{python}
+model_board = pins.board_folder('/data/model', 
+  allow_pickle_read = True
+)
+vetiver_pin_write(model_board, v, 'penguin model')
+```
+
+Create API
+
+```{python}
+from vetiver import VetiverAPI
+
+app = VetiverAPI(v, check_prototype = True)
+```
+
+Retrieve model
+
+```{python}
+v_retrieve = VetiverModel.from_pin(model_board, 'penguin model')
+```
+
+```{python}
+vetiver.prepare_docker(model_board, "penguin model")
+```
