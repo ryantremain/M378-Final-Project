@@ -1,11 +1,8 @@
 ---
 title: "M378 Final Project"
+author: "Ryan Tremain"
 ---
 
-This is a Quarto website.
+# Math 378 Final Project
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
-
-```{r}
-1 + 1
-```
+I will be working through Alex Gold’s book *DevOps for Data Science*.
