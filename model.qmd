@@ -42,13 +42,15 @@ print(f"Coefficients {model.coef_}")
 ## Creating a Vetiver Model
 
 ```{python}
-import vetiver
-import pins
+from vetiver import VetiverModel
 
 v = VetiverModel(model, model_name='penguin model', prototype_data=X)
 ```
 
 ```{python}
+from pins import board_folder
+from vetiver import vetiver_pin_write
+
 model_board = pins.board_folder('/data/model', 
   allow_pickle_read = True
 )
@@ -62,9 +64,9 @@ app = VetiverAPI(v, check_prototype = True)
 ```
 
 ```{python}
-v_retrieve = VetiverModel.from_pin(model_board, 'penguin model')
+# v_retrieve = VetiverModel.from_pin(model_board, 'penguin model')
 ```
 
 ```{python}
-vetiver.prepare_docker(model_board, "penguin model")
+# vetiver.prepare_docker(model_board, "penguin model")
 ```
