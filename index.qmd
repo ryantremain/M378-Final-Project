@@ -1,6 +1,5 @@
 ---
 title: "M378 Final Project"
-author: "Ryan Tremain"
 ---
 
 # Math 378 Final Project
