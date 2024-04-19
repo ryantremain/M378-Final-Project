@@ -1,5 +1,9 @@
 ---
-title: "About"
+title: "Penguin Information"
 ---
 
-This is the about section. Nothing to see here.
+![Gentoo Penguin](images/Gentoo.jpg){width="200"}
+
+![Chinstrap Penguin](images/Chinstrap.jpg){width="300"}
+
+![Adelie Penguin](images/Adelie.jpg){width="300"}
