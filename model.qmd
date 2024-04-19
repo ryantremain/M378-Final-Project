@@ -13,7 +13,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn import preprocessing
 ```
 
-## Get Data
+## Get Data from Palmer Penguins Dataset
 
 ```{python}
 df = penguins.load_penguins().dropna()
@@ -39,7 +39,7 @@ print(f"Columns {X.columns}")
 print(f"Coefficients {model.coef_}")
 ```
 
-## Creating a Vetiver Model
+## Create a Vetiver Model
 
 ```{python}
 from vetiver import VetiverModel

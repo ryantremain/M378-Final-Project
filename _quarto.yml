@@ -9,6 +9,8 @@ website:
         text: Home
       - about.qmd
       - eda-db.qmd
+      - model.qmd
+      - model-db.qmd
 
 format:
   html:

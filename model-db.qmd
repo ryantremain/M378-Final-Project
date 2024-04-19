@@ -1,5 +1,5 @@
 ---
-title: "Model"
+title: "Database Model"
 format:
   html:
     code-fold: true
@@ -13,7 +13,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn import preprocessing
 ```
 
-## Get Data
+## Get Data from Database
 
 ```{python}
 con = duckdb.connect('my-db.duckdb')
