@@ -2,6 +2,6 @@
 title: "M378 Final Project"
 ---
 
-# Math 378 Final Project
+#### Ryan Tremain
 
 I will be working through Alex Gold’s book *DevOps for Data Science*.
