@@ -51,7 +51,7 @@ v = VetiverModel(model, model_name='penguin model', prototype_data=X)
 import pins
 from vetiver import vetiver_pin_write
 
-model_board = pins.board_folder('/data/model', 
+model_board = pins.board_folder('model_board', 
   allow_pickle_read = True
 )
 vetiver_pin_write(model_board, v, 'penguin model')
