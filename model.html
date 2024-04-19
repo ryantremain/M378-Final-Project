@@ -137,6 +137,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="./eda-db.html"> 
 <span class="menu-text">Penguins EDA</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./model.html" aria-current="page"> 
+<span class="menu-text">Model</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./model-db.html"> 
+<span class="menu-text">Database Model</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
@@ -153,10 +161,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#get-data" id="toc-get-data" class="nav-link active" data-scroll-target="#get-data">Get Data</a></li>
+  <li><a href="#get-data-from-palmer-penguins-dataset" id="toc-get-data-from-palmer-penguins-dataset" class="nav-link active" data-scroll-target="#get-data-from-palmer-penguins-dataset">Get Data from Palmer Penguins Dataset</a></li>
   <li><a href="#define-model-and-fit" id="toc-define-model-and-fit" class="nav-link" data-scroll-target="#define-model-and-fit">Define Model and Fit</a></li>
   <li><a href="#get-some-information" id="toc-get-some-information" class="nav-link" data-scroll-target="#get-some-information">Get some information</a></li>
-  <li><a href="#creating-a-vetiver-model" id="toc-creating-a-vetiver-model" class="nav-link" data-scroll-target="#creating-a-vetiver-model">Creating a Vetiver Model</a></li>
+  <li><a href="#create-a-vetiver-model" id="toc-create-a-vetiver-model" class="nav-link" data-scroll-target="#create-a-vetiver-model">Create a Vetiver Model</a></li>
   </ul>
 </nav>
     </div>
@@ -182,7 +190,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="ddac9be3" class="cell" data-execution_count="1">
+<div id="427bc81a" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> palmerpenguins <span class="im">import</span> penguins</span>
@@ -192,9 +200,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn <span class="im">import</span> preprocessing</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<section id="get-data" class="level2">
-<h2 class="anchored" data-anchor-id="get-data">Get Data</h2>
-<div id="fb69a196" class="cell" data-execution_count="2">
+<section id="get-data-from-palmer-penguins-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="get-data-from-palmer-penguins-dataset">Get Data from Palmer Penguins Dataset</h2>
+<div id="7222686d" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> penguins.load_penguins().dropna()</span>
@@ -264,7 +272,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="define-model-and-fit" class="level2">
 <h2 class="anchored" data-anchor-id="define-model-and-fit">Define Model and Fit</h2>
-<div id="58e3b0b3" class="cell" data-execution_count="3">
+<div id="6ad11d3a" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> get_dummies(df[[<span class="st">'bill_length_mm'</span>, <span class="st">'species'</span>, <span class="st">'sex'</span>]], drop_first <span class="op">=</span> <span class="va">True</span>)</span>
@@ -276,7 +284,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="get-some-information" class="level2">
 <h2 class="anchored" data-anchor-id="get-some-information">Get some information</h2>
-<div id="122efb69" class="cell" data-execution_count="4">
+<div id="8c80af51" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"R^2 </span><span class="sc">{</span>model<span class="sc">.</span>score(X,y)<span class="sc">}</span><span class="ss">"</span>)</span>
@@ -292,9 +300,9 @@ Coefficients [  32.53688677 -298.76553447 1094.86739145  547.36692408]</code></p
 </div>
 </div>
 </section>
-<section id="creating-a-vetiver-model" class="level2">
-<h2 class="anchored" data-anchor-id="creating-a-vetiver-model">Creating a Vetiver Model</h2>
-<div id="25f7f5ed" class="cell" data-execution_count="5">
+<section id="create-a-vetiver-model" class="level2">
+<h2 class="anchored" data-anchor-id="create-a-vetiver-model">Create a Vetiver Model</h2>
+<div id="03272300" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> vetiver <span class="im">import</span> VetiverModel</span>
@@ -302,7 +310,7 @@ Coefficients [  32.53688677 -298.76553447 1094.86739145  547.36692408]</code></p
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> VetiverModel(model, model_name<span class="op">=</span><span class="st">'penguin model'</span>, prototype_data<span class="op">=</span>X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="fb403f27" class="cell" data-execution_count="6">
+<div id="7e4123a2" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pins</span>
@@ -319,10 +327,10 @@ Coefficients [  32.53688677 -298.76553447 1094.86739145  547.36692408]</code></p
  with vetiver.model_card()
 Writing pin:
 Name: 'penguin model'
-Version: 20240419T153011Z-aa876</code></pre>
+Version: 20240419T165345Z-aa876</code></pre>
 </div>
 </div>
-<div id="b95f284f" class="cell" data-execution_count="7">
+<div id="33f409e3" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> vetiver <span class="im">import</span> VetiverAPI</span>
@@ -330,13 +338,13 @@ Version: 20240419T153011Z-aa876</code></pre>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>app <span class="op">=</span> VetiverAPI(v, check_prototype <span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="d467fd2d" class="cell" data-execution_count="8">
+<div id="ee7789e2" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># v_retrieve = VetiverModel.from_pin(model_board, 'penguin model')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="961c01ea" class="cell" data-execution_count="9">
+<div id="9d496a1c" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># vetiver.prepare_docker(model_board, "penguin model")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
