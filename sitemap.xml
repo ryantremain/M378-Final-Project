@@ -2,82 +2,86 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ryantremain.github.io/M378-Final-Project/model.html</loc>
-    <lastmod>2024-04-19T16:50:54.279Z</lastmod>
+    <lastmod>2024-04-19T20:51:51.220Z</lastmod>
   </url>
   <url>
     <loc>https://ryantremain.github.io/M378-Final-Project/Lib/site-packages/cffi/recompiler.html</loc>
-    <lastmod>2024-04-19T16:50:49.439Z</lastmod>
+    <lastmod>2024-04-19T20:51:46.452Z</lastmod>
   </url>
   <url>
     <loc>https://ryantremain.github.io/M378-Final-Project/Lib/site-packages/soupsieve-2.5.dist-info/licenses/LICENSE.html</loc>
-    <lastmod>2024-04-19T16:50:54.003Z</lastmod>
+    <lastmod>2024-04-19T20:51:50.948Z</lastmod>
   </url>
   <url>
     <loc>https://ryantremain.github.io/M378-Final-Project/Lib/site-packages/numpy/random/LICENSE.html</loc>
-    <lastmod>2024-04-19T16:50:50.503Z</lastmod>
+    <lastmod>2024-04-19T20:51:47.524Z</lastmod>
   </url>
   <url>
     <loc>https://ryantremain.github.io/M378-Final-Project/Lib/site-packages/idna-3.7.dist-info/LICENSE.html</loc>
-    <lastmod>2024-04-19T16:50:49.759Z</lastmod>
+    <lastmod>2024-04-19T20:51:46.772Z</lastmod>
   </url>
   <url>
     <loc>https://ryantremain.github.io/M378-Final-Project/Lib/site-packages/httpcore-1.0.5.dist-info/licenses/LICENSE.html</loc>
-    <lastmod>2024-04-19T16:50:49.743Z</lastmod>
+    <lastmod>2024-04-19T20:51:46.756Z</lastmod>
   </url>
   <url>
     <loc>https://ryantremain.github.io/M378-Final-Project/Lib/site-packages/uvicorn-0.29.0.dist-info/licenses/LICENSE.html</loc>
-    <lastmod>2024-04-19T16:50:54.079Z</lastmod>
+    <lastmod>2024-04-19T20:51:51.024Z</lastmod>
   </url>
   <url>
     <loc>https://ryantremain.github.io/M378-Final-Project/Lib/site-packages/pandas/tests/indexes/period/test_indexing.html</loc>
-    <lastmod>2024-04-19T16:50:50.827Z</lastmod>
+    <lastmod>2024-04-19T20:51:47.852Z</lastmod>
   </url>
   <url>
     <loc>https://ryantremain.github.io/M378-Final-Project/model-db.html</loc>
-    <lastmod>2024-04-19T16:50:54.279Z</lastmod>
+    <lastmod>2024-04-19T20:51:51.220Z</lastmod>
   </url>
   <url>
-    <loc>https://ryantremain.github.io/M378-Final-Project/about.html</loc>
-    <lastmod>2024-04-19T16:50:54.279Z</lastmod>
+    <loc>https://ryantremain.github.io/M378-Final-Project/model-tree.html</loc>
+    <lastmod>2024-04-19T20:51:51.220Z</lastmod>
   </url>
   <url>
     <loc>https://ryantremain.github.io/M378-Final-Project/eda.html</loc>
-    <lastmod>2024-04-19T16:50:54.279Z</lastmod>
+    <lastmod>2024-04-19T20:51:51.220Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ryantremain.github.io/M378-Final-Project/about.html</loc>
+    <lastmod>2024-04-19T20:51:51.220Z</lastmod>
   </url>
   <url>
     <loc>https://ryantremain.github.io/M378-Final-Project/eda-db.html</loc>
-    <lastmod>2024-04-19T16:50:54.279Z</lastmod>
+    <lastmod>2024-04-19T20:51:51.220Z</lastmod>
   </url>
   <url>
     <loc>https://ryantremain.github.io/M378-Final-Project/Lib/site-packages/pandas/tests/indexes/datetimes/test_indexing.html</loc>
-    <lastmod>2024-04-19T16:50:50.815Z</lastmod>
+    <lastmod>2024-04-19T20:51:47.840Z</lastmod>
   </url>
   <url>
     <loc>https://ryantremain.github.io/M378-Final-Project/Lib/site-packages/pandas/tests/indexes/period/test_constructors.html</loc>
-    <lastmod>2024-04-19T16:50:50.827Z</lastmod>
+    <lastmod>2024-04-19T20:51:47.852Z</lastmod>
   </url>
   <url>
     <loc>https://ryantremain.github.io/M378-Final-Project/Lib/site-packages/starlette-0.37.2.dist-info/licenses/LICENSE.html</loc>
-    <lastmod>2024-04-19T16:50:54.007Z</lastmod>
+    <lastmod>2024-04-19T20:51:50.952Z</lastmod>
   </url>
   <url>
     <loc>https://ryantremain.github.io/M378-Final-Project/Lib/site-packages/httpx-0.27.0.dist-info/licenses/LICENSE.html</loc>
-    <lastmod>2024-04-19T16:50:49.747Z</lastmod>
+    <lastmod>2024-04-19T20:51:46.764Z</lastmod>
   </url>
   <url>
     <loc>https://ryantremain.github.io/M378-Final-Project/Lib/site-packages/rsconnect_python-1.23.0.dist-info/LICENSE.html</loc>
-    <lastmod>2024-04-19T16:50:52.815Z</lastmod>
+    <lastmod>2024-04-19T20:51:49.776Z</lastmod>
   </url>
   <url>
     <loc>https://ryantremain.github.io/M378-Final-Project/Lib/site-packages/QtPy-2.4.1.dist-info/AUTHORS.html</loc>
-    <lastmod>2024-04-19T16:50:49.175Z</lastmod>
+    <lastmod>2024-04-19T20:51:46.184Z</lastmod>
   </url>
   <url>
     <loc>https://ryantremain.github.io/M378-Final-Project/Lib/site-packages/pyzmq-26.0.0.dist-info/licenses/LICENSE.html</loc>
-    <lastmod>2024-04-19T16:50:52.779Z</lastmod>
+    <lastmod>2024-04-19T20:51:49.740Z</lastmod>
   </url>
   <url>
     <loc>https://ryantremain.github.io/M378-Final-Project/index.html</loc>
-    <lastmod>2024-04-19T16:50:54.279Z</lastmod>
+    <lastmod>2024-04-19T20:51:51.220Z</lastmod>
   </url>
 </urlset>

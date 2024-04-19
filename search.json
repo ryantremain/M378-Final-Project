@@ -2,37 +2,37 @@
   {
     "objectID": "model.html",
     "href": "model.html",
-    "title": "Model",
+    "title": "Simple Model with Vertiver",
     "section": "",
     "text": "Code\nfrom palmerpenguins import penguins\nfrom pandas import get_dummies\nimport numpy as np\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn import preprocessing"
   },
   {
     "objectID": "model.html#get-data-from-palmer-penguins-dataset",
     "href": "model.html#get-data-from-palmer-penguins-dataset",
-    "title": "Model",
+    "title": "Simple Model with Vertiver",
     "section": "Get Data from Palmer Penguins Dataset",
     "text": "Get Data from Palmer Penguins Dataset\n\n\nCode\ndf = penguins.load_penguins().dropna()\n\ndf.head(3)\n\n\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n0\nAdelie\nTorgersen\n39.1\n18.7\n181.0\n3750.0\nmale\n2007\n\n\n1\nAdelie\nTorgersen\n39.5\n17.4\n186.0\n3800.0\nfemale\n2007\n\n\n2\nAdelie\nTorgersen\n40.3\n18.0\n195.0\n3250.0\nfemale\n2007"
   },
   {
     "objectID": "model.html#define-model-and-fit",
     "href": "model.html#define-model-and-fit",
-    "title": "Model",
+    "title": "Simple Model with Vertiver",
     "section": "Define Model and Fit",
     "text": "Define Model and Fit\n\n\nCode\nX = get_dummies(df[['bill_length_mm', 'species', 'sex']], drop_first = True)\ny = df['body_mass_g']\n\nmodel = LinearRegression().fit(X, y)"
   },
   {
     "objectID": "model.html#get-some-information",
     "href": "model.html#get-some-information",
-    "title": "Model",
+    "title": "Simple Model with Vertiver",
     "section": "Get some information",
     "text": "Get some information\n\n\nCode\nprint(f\"R^2 {model.score(X,y)}\")\nprint(f\"Intercept {model.intercept_}\")\nprint(f\"Columns {X.columns}\")\nprint(f\"Coefficients {model.coef_}\")\n\n\nR^2 0.8555368759537614\nIntercept 2169.2697209393996\nColumns Index(['bill_length_mm', 'species_Chinstrap', 'species_Gentoo', 'sex_male'], dtype='object')\nCoefficients [  32.53688677 -298.76553447 1094.86739145  547.36692408]"
   },
   {
     "objectID": "model.html#create-a-vetiver-model",
     "href": "model.html#create-a-vetiver-model",
-    "title": "Model",
+    "title": "Simple Model with Vertiver",
     "section": "Create a Vetiver Model",
-    "text": "Create a Vetiver Model\n\n\nCode\nfrom vetiver import VetiverModel\n\nv = VetiverModel(model, model_name='penguin model', prototype_data=X)\n\n\n\n\nCode\nimport pins\nfrom vetiver import vetiver_pin_write\n\nmodel_board = pins.board_folder('model_board', \n  allow_pickle_read = True\n)\nvetiver_pin_write(model_board, v, 'penguin model')\n\n\nModel Cards provide a framework for transparent, responsible reporting. \n Use the vetiver `.qmd` Quarto template as a place to start, \n with vetiver.model_card()\nWriting pin:\nName: 'penguin model'\nVersion: 20240419T165345Z-aa876\n\n\n\n\nCode\nfrom vetiver import VetiverAPI\n\napp = VetiverAPI(v, check_prototype = True)\n\n\n\n\nCode\n# v_retrieve = VetiverModel.from_pin(model_board, 'penguin model')\n\n\n\n\nCode\n# vetiver.prepare_docker(model_board, \"penguin model\")"
+    "text": "Create a Vetiver Model\n\n\nCode\nfrom vetiver import VetiverModel\n\nv = VetiverModel(model, model_name='penguin model', prototype_data=X)\n\n\n\n\nCode\nimport pins\nfrom vetiver import vetiver_pin_write\n\nmodel_board = pins.board_folder('model_board', \n  allow_pickle_read = True\n)\nvetiver_pin_write(model_board, v, 'penguin model')\n\n\nModel Cards provide a framework for transparent, responsible reporting. \n Use the vetiver `.qmd` Quarto template as a place to start, \n with vetiver.model_card()\nWriting pin:\nName: 'penguin model'\nVersion: 20240419T205658Z-aa876\n\n\n\n\nCode\nfrom vetiver import VetiverAPI\n\napp = VetiverAPI(v, check_prototype = True)\n\n\n\n\nCode\n# v_retrieve = VetiverModel.from_pin(model_board, 'penguin model')\n\n\n\n\nCode\n# vetiver.prepare_docker(model_board, \"penguin model\")"
   },
   {
     "objectID": "Lib/site-packages/soupsieve-2.5.dist-info/licenses/LICENSE.html",
@@ -72,37 +72,37 @@
   {
     "objectID": "model-db.html",
     "href": "model-db.html",
-    "title": "Database Model",
+    "title": "Modelling with a Database",
     "section": "",
     "text": "Code\nimport duckdb\nfrom pandas import get_dummies\nimport numpy as np\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn import preprocessing"
   },
   {
     "objectID": "model-db.html#get-data-from-database",
     "href": "model-db.html#get-data-from-database",
-    "title": "Database Model",
+    "title": "Modelling with a Database",
     "section": "Get Data from Database",
     "text": "Get Data from Database\n\n\nCode\ncon = duckdb.connect('my-db.duckdb')\ndf = con.execute(\"SELECT * FROM penguins\").fetchdf().dropna()\ncon.close()\n\ndf.head(3)\n\n\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n0\nAdelie\nTorgersen\n39.1\n18.7\n181.0\n3750.0\nmale\n2007\n\n\n1\nAdelie\nTorgersen\n39.5\n17.4\n186.0\n3800.0\nfemale\n2007\n\n\n2\nAdelie\nTorgersen\n40.3\n18.0\n195.0\n3250.0\nfemale\n2007"
   },
   {
     "objectID": "model-db.html#define-model-and-fit",
     "href": "model-db.html#define-model-and-fit",
-    "title": "Database Model",
+    "title": "Modelling with a Database",
     "section": "Define Model and Fit",
     "text": "Define Model and Fit\n\n\nCode\nX = get_dummies(df[['bill_length_mm', 'species', 'sex']], drop_first = True)\ny = df['body_mass_g']\n\nmodel = LinearRegression().fit(X, y)"
   },
   {
     "objectID": "model-db.html#get-some-information",
     "href": "model-db.html#get-some-information",
-    "title": "Database Model",
+    "title": "Modelling with a Database",
     "section": "Get some information",
     "text": "Get some information\n\n\nCode\nprint(f\"R^2 {model.score(X,y)}\")\nprint(f\"Intercept {model.intercept_}\")\nprint(f\"Columns {X.columns}\")\nprint(f\"Coefficients {model.coef_}\")\n\n\nR^2 0.8555368759537614\nIntercept 2169.2697209393996\nColumns Index(['bill_length_mm', 'species_Chinstrap', 'species_Gentoo', 'sex_male'], dtype='object')\nCoefficients [  32.53688677 -298.76553447 1094.86739145  547.36692408]"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "model-tree.html",
+    "href": "model-tree.html",
+    "title": "Decision Tree Model",
     "section": "",
-    "text": "This is the about section. Nothing to see here."
+    "text": "Now, we will be using R to create a simple decision tree model for the Palmer Penguins Dataset.\n\n\nCode\nlibrary(dplyr)\n\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\n\nCode\nlibrary(ggplot2)\nlibrary(dbplyr)\n\n\n\nAttaching package: 'dbplyr'\n\n\nThe following objects are masked from 'package:dplyr':\n\n    ident, sql\n\n\nCode\nlibrary(tidyverse)\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ lubridate 1.9.3     ✔ tibble    3.2.1\n✔ purrr     1.0.2     ✔ tidyr     1.3.1\n✔ readr     2.1.5     \n\n\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dbplyr::ident() masks dplyr::ident()\n✖ dplyr::lag()    masks stats::lag()\n✖ dbplyr::sql()   masks dplyr::sql()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nCode\nlibrary(tidymodels)\n\n\n── Attaching packages ────────────────────────────────────── tidymodels 1.2.0 ──\n✔ broom        1.0.5      ✔ rsample      1.2.1 \n✔ dials        1.2.1      ✔ tune         1.2.1 \n✔ infer        1.0.7      ✔ workflows    1.1.4 \n✔ modeldata    1.3.0      ✔ workflowsets 1.1.0 \n✔ parsnip      1.2.1      ✔ yardstick    1.3.1 \n✔ recipes      1.0.10     \n── Conflicts ───────────────────────────────────────── tidymodels_conflicts() ──\n✖ scales::discard() masks purrr::discard()\n✖ dplyr::filter()   masks stats::filter()\n✖ recipes::fixed()  masks stringr::fixed()\n✖ dbplyr::ident()   masks dplyr::ident()\n✖ dplyr::lag()      masks stats::lag()\n✖ yardstick::spec() masks readr::spec()\n✖ dbplyr::sql()     masks dplyr::sql()\n✖ recipes::step()   masks stats::step()\n• Learn how to get started at https://www.tidymodels.org/start/\n\n\nCode\nlibrary(rpart.plot)\n\n\nLoading required package: rpart\n\nAttaching package: 'rpart'\n\nThe following object is masked from 'package:dials':\n\n    prune\n\n\nCode\ncon &lt;- DBI::dbConnect(duckdb::duckdb(), dbdir = \"my-db.duckdb\")\ndf &lt;- dplyr::tbl(con, \"penguins_R\")\n\n\n\n\nCode\nPenguins &lt;- as_tibble(df)\nPenguins &lt;- drop_na(Penguins)\n\n\nNow, we will split our data to create a training and test set.\n\n\nCode\nset.seed(1)\nPenguins_split &lt;- initial_split(Penguins, prop = 0.8)\nPenguins_train &lt;- training(Penguins_split)\nPenguins_test &lt;- testing(Penguins_split)\n\n\n\n\nCode\ntree_spec &lt;- decision_tree() %&gt;%   \n  set_engine(\"rpart\") %&gt;%\n  set_mode(\"regression\")\n\n\n\n\nCode\ntree_fit &lt;- tree_spec |&gt;\n  fit(body_mass_g ~ ., Penguins_train)\n\n\n\n\nCode\ntree_fit %&gt;%\n  extract_fit_engine() %&gt;%\n  rpart.plot()\n\n\n\n\n\n\n\n\n\nNow that we have a simple regression tree, we can evaluate it using RMSE.\n\n\nCode\naugment(tree_fit, new_data = Penguins_train) %&gt;%   \n  rmse(truth = body_mass_g, estimate = .pred)\n\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 rmse    standard        292.\n\n\n\n\nCode\naugment(tree_fit, new_data = Penguins_test) %&gt;%   \n  rmse(truth = body_mass_g, estimate = .pred)\n\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 rmse    standard        378.\n\n\nAs we can see, our simple model fits relatively well to our training data, but performs poorly on our test data. Our RMSE tells us that on average our decision tree’s predictions deviate from actual penguin body masses by 378 grams. For future research, we can consider fitting a larger tree and tuning our tree’s parameters to achieve a lower RMSE, or using ensemble methods. However, our simple tree is easy to interpret, and we can gather that, on average, Adelie and Chinstrap penguins are smaller than other species, and female penguins of a given species are lighter than their male counterparts.\n\n\nCode\nDBI::dbDisconnect(con)"
   },
   {
     "objectID": "eda.html",
@@ -124,6 +124,13 @@
     "title": "Penguins EDA",
     "section": "Penguin Size vs Mass by Species",
     "text": "Penguin Size vs Mass by Species\n\n\nCode\ndf %&gt;%\n  ggplot(aes(x = bill_length_mm, y = body_mass_g, color = species)) +\n  geom_point() + \n  geom_smooth(method = \"lm\")\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: Removed 2 rows containing non-finite outside the scale range\n(`stat_smooth()`).\n\n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_point()`)."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This is the about section. Nothing to see here."
   },
   {
     "objectID": "eda-db.html",
