@@ -11,6 +11,7 @@ website:
       - eda-db.qmd
       - model.qmd
       - model-db.qmd
+      - model-tree.qmd
 
 format:
   html:
