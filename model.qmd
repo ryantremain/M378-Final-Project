@@ -1,5 +1,5 @@
 ---
-title: "Model"
+title: "Simple Model with Vertiver"
 format:
   html:
     code-fold: true
